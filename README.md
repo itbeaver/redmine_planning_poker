@@ -1,7 +1,7 @@
-!!!!!!!!!!!! WIP
+!!!!!!!!!!!! WIP. Please Help us.
 
 
-# Pivotal Tracker: Planning Poker
+# Redmine: Planning Poker
 
 <!-- [![Build Status](https://codeship.io/projects/9c4e6a80-2d71-0132-149b-5a27a41fa12a/status?branch=master)](https://codeship.io/projects/39242)
 [![Code Quality](https://codeclimate.com/github/Foodee/planning-poker/badges/gpa.svg)](https://codeclimate.com/github/Foodee/planning-poker)
@@ -10,8 +10,8 @@
 Planning poker, also called Scrum poker, is a consensus-based technique for estimating, mostly used to estimate effort or relative size of user stories in software development. In planning poker, members of the group make estimates by playing numbered cards in the app, instead of speaking them aloud. The cards are revealed, and the estimates are then discussed. By hiding the figures in this way, the group can avoid the cognitive bias of anchoring, where the first number spoken aloud sets a precedent for subsequent estimates.
 
 ## Features
-* Authentication from Pivotal Tracker
-* Displays all user's projects in Pivotal Tracker
+* Authentication from Redmine
+* Displays all user's projects in Redmine
 * Push Notifications when playing cards
 * Bootstrap + Font-Awesome for Responsive Design
 
@@ -20,7 +20,7 @@ Planning poker, also called Scrum poker, is a consensus-based technique for esti
 * MongoDB
 * Twitter Bootstrap
 * Font-Awesome
-* Pivotal Tracker gem (currently v3)
+* Redmine Client gem
 * Thin webserver for Faye
 * Faye for Push Notifications
 
@@ -34,7 +34,7 @@ This application uses the following frameworks:
 ## Gems
 This application uses the following gems:
 
-* [Pivotal Tracker](https://github.com/jsmestad/pivotal-tracker) (Pivotal Tracker gem)
+* [Redmine Client Api](https://github.com/itbeaver/redmine_client) (Redmine Client gem)
 * [Faye](http://faye.jcoglan.com/) (Faye)
 * [Mongoid](https://github.com/mongoid/mongoid) (Mongoid)
 * [Twitter Bootstrap SASS](https://github.com/twbs/bootstrap-sass) (Twitter Bootstrap port to SASS)
@@ -82,7 +82,7 @@ rails s
 ##Rule of the Game
 Once you have the application set up, you can:
 
-* Login using your Pivotal Tracker credential
+* Login using your Redmine credential
 * Click any project name in the header menu that has unestimated stories
 * Click on **UNESTIMATED** in the submenu to see the list of unestimated stories for that project
 * Click / Expand the story to start the planning poker session
@@ -93,7 +93,7 @@ The estimators discuss the feature, asking questions of the product owner as nee
 
 Once all selections are in, any estimator can then hit the **REVEAL** button to reveal the cards at the same time.
 
-If all estimators selected the same value, that becomes the estimate. If not, the estimators discuss their estimates. The high and low estimators should especially share their reasons. After further discussion, once the estimation score has been agreed on, any estimator can then click on any card representing that number. After that, any user can update the story name and description (if necessary) and then hit **SAVE** to update the story in Pivotal Tracker.
+If all estimators selected the same value, that becomes the estimate. If not, the estimators discuss their estimates. The high and low estimators should especially share their reasons. After further discussion, once the estimation score has been agreed on, any estimator can then click on any card representing that number. After that, any user can update the story name and description (if necessary) and then hit **SAVE** to update the story in Redmine.
 
 ## Contributing
 Contributions are encouraged. You can contribute in many ways. For example, you might:
