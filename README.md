@@ -62,7 +62,7 @@ Change the domain into the actual production domain when deploying the app. You 
 To get started, clone this repository to your local machine, and install dependencies:
 
 ```shell
-git clone git@github.com:bimovidia/planning-poker.git
+git clone git@github.com:itbeaver/redmine_planning_poker.git
 cd planning-poker
 bundle install
 ```
