@@ -1,5 +1,5 @@
-<% project.stories.all.each do |story| %>
-  <div id="story-<%= story.id %>" class="story clearfix story-<%= story.current_state %> story-<%= story.story_type %> story-<%= estimation_class(story) %>">
+<% @stories.find(project_id: project.id).each do |story| %>
+  <div id="story-<%= story.id %>" class="story clearfix story-<%= story.status.name %> story-<%= story.tracker.name %> story-<%= estimation_class(story) %>">
     <div class="story-overview clearfix">
       <div class="pull-left story-icons">
         <%= link_to detail_path(story.id, 'expand', encoded_user), id: "expand-#{story.id}", remote: true do %>
@@ -13,7 +13,7 @@
       <div class="pull-left story-description">
         <%= story.name %> 
         <span class="<%= state(story) %>">
-          <%= story.current_state %>
+          <%= story.status.name %>
         </span>
       </div>
     </div>

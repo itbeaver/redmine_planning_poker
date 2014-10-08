@@ -13,7 +13,7 @@ module Support
       end
 
       def stub_projects(projects = [])
-        PivotalTracker::Project.stubs(:all).returns(projects)
+        RedmineClient::Project.stubs(:all).returns(projects)
       end
 
       def stub_labels(n = 5)

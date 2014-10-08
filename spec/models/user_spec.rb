@@ -41,14 +41,14 @@ describe User do
 
     context '#create' do
       before do
-        PivotalTracker::Client.stubs(:token).returns(user.token)
+        RedmineClient::Client.stubs(:token).returns(user.token)
         User.stubs(:salted).returns(user.salt)
       end
 
       after  { User.create(params) }
 
-      it 'should call token on PivotalTracker::Client' do
-        PivotalTracker::Client.expects(:token).with(
+      it 'should call token on RedmineClient::Client' do
+        RedmineClient::Client.expects(:token).with(
           params[:username],
           params[:password]
         ).returns(user.token)

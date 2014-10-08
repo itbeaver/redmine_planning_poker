@@ -14,21 +14,21 @@ describe Story do
       }}
 
       before do
-        PivotalTracker::Story.stubs(:find).returns(story)
+        RedmineClient::Issue.stubs(:find).returns(story)
         story.stubs(:update)
       end
 
-      it 'should call find on PivotalTracker::Story' do
-        PivotalTracker::Story.expects(:find).with(
+      it 'should call find on RedmineClient::Issue' do
+        RedmineClient::Issue.expects(:find).with(
           params[:story_id], params[:project_id]
         ).returns(story)
         
-        Story.update(params)
+        Issue.update(params)
       end
 
       it 'should call update on story' do
         story.expects(:update).with(params[:story])
-        Story.update(params)
+        Issue.update(params)
       end
     end
 

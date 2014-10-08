@@ -7,7 +7,7 @@ gem 'faye'
 
 # Heroku and New Relic
 gem 'rails_12factor'
-gem 'newrelic_rpm'
+# gem 'newrelic_rpm'
 
 # Assets
 gem 'jquery-rails'
@@ -21,7 +21,8 @@ gem 'yui-compressor'
 gem 'font-awesome-rails'
 
 # Custom gems
-gem 'pivotal-tracker'
+# gem 'pivotal-tracker'
+gem 'redmine_client', github: 'itbeaver/redmine_client'
 gem 'backtop'
 gem 'mongoid', github: 'mongoid'
 gem 'bson_ext'

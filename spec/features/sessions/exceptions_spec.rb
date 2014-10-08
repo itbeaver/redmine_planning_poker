@@ -12,8 +12,8 @@ describe 'Sessions::Exceptions' do
 
   context 'no token' do
     before do
-      PivotalTracker::Client.stubs(:token).raises(
-        PivotalTracker::Client::NoToken
+      RedmineClient::Base.stubs(:token).raises(
+        RedmineClient::Base::NoToken
       )
 
       login
@@ -26,7 +26,7 @@ describe 'Sessions::Exceptions' do
     before do
       skip_authentication(DashboardController)
 
-      PivotalTracker::Project.stubs(:all).raises(
+      RedmineClient::Project.stubs(:all).raises(
         RestClient::Unauthorized
       )
 

@@ -11,20 +11,20 @@ describe DashboardController do
   end
 
   describe 'GET index' do
-    before { PivotalTracker::Project.stubs(:all) }
+    before { RedmineClient::Project.stubs(:all) }
 
-    it 'should call all on PivotalTracker::Project' do
-      PivotalTracker::Project.expects(:all)
+    it 'should call all on RedmineClient::Project' do
+      RedmineClient::Project.expects(:all)
       get :index, {}, valid_session
     end
   end
 
   describe 'GET project' do
-    before { PivotalTracker::Project.stubs(:find) }
+    before { RedmineClient::Project.stubs(:find) }
     let(:params) {{ id: 1 }}
 
-    it 'should call find on PivotalTracker::Project' do
-      PivotalTracker::Project.expects(:find).with(params[:id])
+    it 'should call find on RedmineClient::Project' do
+      RedmineClient::Project.expects(:find).with(params[:id])
       xhr :get, :project, params, valid_session, format: :js
     end
 
@@ -101,10 +101,10 @@ describe DashboardController do
       'action'     => 'update'
     }}
 
-    before { Story.stubs(:update) }
+    before { Issue.stubs(:update) }
 
-    it 'should call update on Story' do
-      Story.expects(:update).with(params)
+    it 'should call update on Issue' do
+      Issue.expects(:update).with(params)
       xhr :post, :update, params, valid_session, format: :js
     end
 

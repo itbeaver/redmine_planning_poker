@@ -3,12 +3,13 @@ class DashboardController < ApplicationController
   respond_to    :js
 
   def index
-    @projects = PivotalTracker::Project.all
+    @projects = RedmineClient::Project.all
+    @stories = RedmineClient::Issue.all
   end
 
   # Ajax
   def project
-    @project = PivotalTracker::Project.find(params[:id].to_i)
+    @project = RedmineClient::Project.find(params[:id].to_i)
 
     respond_with @project do |format|
       format.js { render 'dashboard/ajax/project' }

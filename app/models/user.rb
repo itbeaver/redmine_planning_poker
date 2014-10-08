@@ -25,7 +25,7 @@ class User
 
     def create(params)
       # Set Pivotal Tracker token
-      token = PivotalTracker::Client.token(
+      token = RedmineClient::Client.token(
         params[:username],
         params[:password]
       )

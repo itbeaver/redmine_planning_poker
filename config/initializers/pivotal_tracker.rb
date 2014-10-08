@@ -1,2 +1,2 @@
 # Enable SSL support
-PivotalTracker::Client.use_ssl = true
+# RedmineClient::Client.use_ssl = true
